@@ -1,4 +1,4 @@
-const wordsFile = "/static/js/commonwords.json";
+const wordsFile = "/gorillatype/static/js/commonwords.json";
 
 const duration = 30;
 
