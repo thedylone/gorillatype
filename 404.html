@@ -16,11 +16,10 @@
         href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,300,400,600,700,800%7COpen+Sans+Condensed:300&amp;subset=latin,cyrillic"
         rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="static/css/screen.css">
+    <link rel="stylesheet" href="static/css/error.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link rel="stylesheet" href="static/css/type.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="static/js/body.js"></script>
-    <script src="type.js"></script>
     <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
     <script src="https://kit.fontawesome.com/3bcd4a3e8d.js" crossorigin="anonymous"></script>
 </head>
@@ -28,13 +27,13 @@
 <body>
     <div id="loader-wrapper">
         <div id="loader">
-            <p>loading...</p>
+            <p>loading....</p>
             <img src="static/images/pip.gif">
         </div>
     </div>
     <!-- header-->
     <header class="main-header">
-        <div class="first-nav">
+        <div class="first-nav"><a class="skip-nav-link" href="#home">skip navigation</a>
             <div class="container">
                 <nav class="first-nav__links">
                     <ul>
@@ -53,71 +52,22 @@
             <div class="container"><a class="second-nav__logo"><span></span></a>
                 <nav class="menu">
                     <ul>
-                        <li><a class="js-link js-anchor is-selected" href="#home">home</a></li>
+                        <li><a class="js-link js-anchor is-selected" href="#home">404</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
-    <!-- type section-->
-    <section class="type-section" id="home">
-        <div class="container">
-            <header class="type-section__header">
-                <h2>gorillatype</h2>
-                <h4><i>Almost, but not quite, entirely unlike <a href="https://monkeytype.com/" target="_blank">monkeytype</a></i></h4>
+    <!-- error section-->
+    <section class="error-section" id="home">
+        <div class="container animate__animated" animation-style="fadeIn" animation-duration="0.5s"
+            animation-delay="0s">
+            <header class="error-section__header">
+                <h2>404</h2>
+                <h4>how did you get here?</h4>
             </header>
-            <div id="type-game">
-                <div id="type-container">
-                    <div id="type-header">
-                        <div id="type-timer"></div>
-                        <div id="type-toggle">toggles: <span onclick="$('#type-keyboard').slideToggle(500)">keyboard</span><span onclick="toggleScrambleFunction()">scramble</span></div> 
-                        <div id="type-scrambled"></div>
-                    </div>
-                    <div id="type-words">
-                    </div>
-                </div>
-                <div id="type-results">
-                    <span id="wpm"></span>
-                    <span id="acc"></span>
-                </div>
-                <div id="type-restart" onclick="init()"><i class="fas fa-redo-alt"></i></div>
-                <div id="type-keyboard">
-                    <div class="keyboard-row">
-                        <div class="keyboard-letter" data-char="q">q</div>
-                        <div class="keyboard-letter" data-char="w">w</div>
-                        <div class="keyboard-letter" data-char="e">e</div>
-                        <div class="keyboard-letter" data-char="r">r</div>
-                        <div class="keyboard-letter" data-char="t">t</div>
-                        <div class="keyboard-letter" data-char="y">y</div>
-                        <div class="keyboard-letter" data-char="u">u</div>
-                        <div class="keyboard-letter" data-char="i">i</div>
-                        <div class="keyboard-letter" data-char="o">o</div>
-                        <div class="keyboard-letter" data-char="p">p</div>
-                    </div>
-                    <div class="keyboard-row">
-                        <div class="keyboard-letter" data-char="a">a</div>
-                        <div class="keyboard-letter" data-char="s">s</div>
-                        <div class="keyboard-letter" data-char="d">d</div>
-                        <div class="keyboard-letter" data-char="f">f</div>
-                        <div class="keyboard-letter" data-char="g">g</div>
-                        <div class="keyboard-letter" data-char="h">h</div>
-                        <div class="keyboard-letter" data-char="j">j</div>
-                        <div class="keyboard-letter" data-char="k">k</div>
-                        <div class="keyboard-letter" data-char="l">l</div>
-                    </div>
-                    <div class="keyboard-row">
-                        <div class="keyboard-letter" data-char="z">z</div>
-                        <div class="keyboard-letter" data-char="x">x</div>
-                        <div class="keyboard-letter" data-char="c">c</div>
-                        <div class="keyboard-letter" data-char="v">v</div>
-                        <div class="keyboard-letter" data-char="b">b</div>
-                        <div class="keyboard-letter" data-char="n">n</div>
-                        <div class="keyboard-letter" data-char="m">m</div>
-                        <div class="keyboard-letter" data-char=",">,</div>
-                        <div class="keyboard-letter" data-char=".">.</div>
-                        <div class="keyboard-letter" data-char="/">/</div>
-                    </div>
-                </div>
+            <div class="error-section__image">
+                <img src="static/images/smh.gif">
             </div>
         </div>
     </section>
