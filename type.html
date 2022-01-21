@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>thedylone</title>
+    <meta name="description" content="thedylone github page">
+    <link rel="shortcut icon" href="static/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="static/favicon/site.webmanifest">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,300,400,600,700,800%7COpen+Sans+Condensed:300&amp;subset=latin,cyrillic"
+        rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="static/css/screen.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="static/css/type.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="static/js/body.js"></script>
+    <script src="type.js"></script>
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+    <script src="https://kit.fontawesome.com/3bcd4a3e8d.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="loader-wrapper">
+        <div id="loader">
+            <p>loading...</p>
+            <img src="/static/images/pip.gif">
+        </div>
+    </div>
+    <!-- header-->
+    <header class="main-header">
+        <div class="first-nav">
+            <div class="container">
+                <nav class="first-nav__links">
+                    <ul>
+                        <li>
+                            <a href="https://thedylone.github.io/">homepage</a>
+                        </li>
+                        <li>
+                            <a href="https://thedylone.github.io/projects.html">projects</a>
+                        </li>
+                    </ul>
+                </nav>
+                <a class="first-nav__navcontrol icon icon_menu js-navcontrol" href="#"><i class="fas fa-bars"></i></a>
+            </div>
+        </div>
+        <div class="second-nav js-nav">
+            <div class="container"><a class="second-nav__logo"><span></span></a>
+                <nav class="menu">
+                    <ul>
+                        <li><a class="js-link js-anchor is-selected" href="#home">home</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- type section-->
+    <section class="type-section" id="home">
+        <div class="container">
+            <header class="type-section__header">
+                <h2>gorillatype</h2>
+                <h4><i>Almost, but not quite, entirely unlike <a href="https://monkeytype.com/" target="_blank">monkeytype</a></i></h4>
+            </header>
+            <div id="type-game">
+                <div id="type-container">
+                    <div id="type-header">
+                        <div id="type-timer"></div>
+                        <div id="type-toggle">toggles: <span onclick="$('#type-keyboard').slideToggle(500)">keyboard</span><span onclick="toggleScrambleFunction()">scramble</span></div> 
+                        <div id="type-scrambled"></div>
+                    </div>
+                    <div id="type-words">
+                    </div>
+                </div>
+                <div id="type-results">
+                    <span id="wpm"></span>
+                    <span id="acc"></span>
+                </div>
+                <div id="type-restart" onclick="init()"><i class="fas fa-redo-alt"></i></div>
+                <div id="type-keyboard">
+                    <div class="keyboard-row">
+                        <div class="keyboard-letter" data-char="q">q</div>
+                        <div class="keyboard-letter" data-char="w">w</div>
+                        <div class="keyboard-letter" data-char="e">e</div>
+                        <div class="keyboard-letter" data-char="r">r</div>
+                        <div class="keyboard-letter" data-char="t">t</div>
+                        <div class="keyboard-letter" data-char="y">y</div>
+                        <div class="keyboard-letter" data-char="u">u</div>
+                        <div class="keyboard-letter" data-char="i">i</div>
+                        <div class="keyboard-letter" data-char="o">o</div>
+                        <div class="keyboard-letter" data-char="p">p</div>
+                    </div>
+                    <div class="keyboard-row">
+                        <div class="keyboard-letter" data-char="a">a</div>
+                        <div class="keyboard-letter" data-char="s">s</div>
+                        <div class="keyboard-letter" data-char="d">d</div>
+                        <div class="keyboard-letter" data-char="f">f</div>
+                        <div class="keyboard-letter" data-char="g">g</div>
+                        <div class="keyboard-letter" data-char="h">h</div>
+                        <div class="keyboard-letter" data-char="j">j</div>
+                        <div class="keyboard-letter" data-char="k">k</div>
+                        <div class="keyboard-letter" data-char="l">l</div>
+                    </div>
+                    <div class="keyboard-row">
+                        <div class="keyboard-letter" data-char="z">z</div>
+                        <div class="keyboard-letter" data-char="x">x</div>
+                        <div class="keyboard-letter" data-char="c">c</div>
+                        <div class="keyboard-letter" data-char="v">v</div>
+                        <div class="keyboard-letter" data-char="b">b</div>
+                        <div class="keyboard-letter" data-char="n">n</div>
+                        <div class="keyboard-letter" data-char="m">m</div>
+                        <div class="keyboard-letter" data-char=",">,</div>
+                        <div class="keyboard-letter" data-char=".">.</div>
+                        <div class="keyboard-letter" data-char="/">/</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- footer-->
+    <footer class="main-footer">
+        <div class="container">
+            <p class="main-footer__copyright"><span>made by thedylone</span></p>
+            <a class="main-footer__gotop js-link js-anchor" style="opacity: 1;" href="#home"><i
+                    class="fas fa-arrow-circle-up"></i></a>
+            <p class="main-footer__links"><a onclick="openModal($('#modal-credits'))">credits</a></p>
+        </div>
+    </footer>
+    <!-- modal stuff -->
+    <script>
+        function openModal(modal) {
+            modal.css("display", "block");;
+            const body = document.body;
+            body.style.top = -1 * window.pageYOffset + 'px';
+            body.style.position = 'fixed';
+        }
+        window.onclick = function (e) {
+            modal = document.getElementById("modal-credits")
+            if (e.target == modal) {
+                modal.style.display = "none";
+                const body = document.body;
+                const scrollY = body.style.top;
+                body.style.position = '';
+                body.style.top = '';
+                window.scrollTo(0, parseInt(scrollY || '0') * -1);
+            }
+        }
+    </script>
+    <!-- credits modal -->
+    <div id="modal-credits" class="modal">
+        <div class="modal-content">
+            <ul class="fa-ul">
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>using <a href="https://animate.style/"
+                        target="_blank">animate.css</a> for the animation keyframes</li>
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>also appreciate <a
+                        href="https://matthew.wagerfield.com/parallax/" target="_blank">parallax.js</a> for the parallax
+                    effect at the top</li>
+                <li><span class="fa-li"><i class="fas fa-check"></i></span>great library <a
+                        href="http://gijsroge.github.io/tilt.js/" target="_blank">tilt.js</a> providing the tilt effects
+                </li>
+                <li><span class="fa-li"><i class="fas fa-check"></i><a href="https://fontawesome.com/"
+                            target="_blank"></span>font awesome</a> for the pretty nice icons</li>
+            </ul>
+
+        </div>
+    </div>
+</body>
+
+</html>
