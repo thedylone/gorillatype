@@ -1,4 +1,4 @@
-const wordsFile = "commonwords.json";
+const wordsFile = "/static/js/commonwords.json";
 
 const duration = 30;
 
