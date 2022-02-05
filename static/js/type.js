@@ -8,7 +8,7 @@ let wordCount = 0;
 let minWord = 0;
 let letterCount = 0;
 let correctWords = 0;
-let correctLetters = 0;
+let typedEntries = 0;
 let incorrectLetters = 0;
 let keyboard;
 let toggleScramble = true;
@@ -52,7 +52,10 @@ function moveCaret(dist) {
 }
 
 function resetKeyboard() {
-    keyboard = { 'a': 'a', 'b': 'b', 'c': 'c', 'd': 'd', 'e': 'e', 'f': 'f', 'g': 'g', 'h': 'h', 'i': 'i', 'j': 'j', 'k': 'k', 'l': 'l', 'm': 'm', 'n': 'n', 'o': 'o', 'p': 'p', 'q': 'q', 'r': 'r', 's': 's', 't': 't', 'u': 'u', 'v': 'v', 'w': 'w', 'x': 'x', 'y': 'y', 'z': 'z' };
+    keyboard = {};
+    for (var i = 97; i <= 122; i++){
+        keyboard[String.fromCharCode(i)] = String.fromCharCode(i);
+      }
     displayKeyboard();
 }
 
@@ -78,12 +81,10 @@ function toggleScrambleFunction() {
 }
 
 function scrambleKeyboard() {
-    alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-    scrambled = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-    shuffle(scrambled);
-    for (i = 0; i < alphabet.length; i++) {
-        keyboard[alphabet[i]] = scrambled[i]
-    }
+    scrambled = shuffle(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']);
+    Object.keys(keyboard).forEach(letter =>{
+        keyboard[letter] = scrambled.pop();
+    })
     displayScrambled("scrambled!");
     displayKeyboard();
 }
@@ -118,7 +119,6 @@ function startType(e) {
             var currentLetter = document.getElementsByClassName("active")[0].children[letterCount];
             if (keyboard[e.key] == currentLetter.innerText) {
                 currentLetter.className = "correct";
-                // correctLetters++;
             } else {
                 currentLetter.className = "incorrect";
                 incorrectLetters++;
@@ -135,7 +135,7 @@ function startType(e) {
             incorrectLetters++;
             moveCaret(letterCount * 0.6);
         }
-
+        typedEntries++;
     } else if (e.keyCode == 8 && started) {
         // if backspace
         if (letterCount) {
@@ -160,7 +160,6 @@ function startType(e) {
             if (activeWord.querySelectorAll(".incorrect").length == 0) {
                 // all correct
                 activeWord.className = "word";
-                correctLetters += ++activeWord.childElementCount;
                 minWord = wordCount;
                 if (toggleScramble) scrambleKeyboard();
             } else {
@@ -174,14 +173,15 @@ function startType(e) {
         }
         document.getElementsByClassName("word")[wordCount].className = "word active";
         letterCount = 0;
+        typedEntries++;
         moveCaret(0);
     }
 }
 
 function showResults() {
-    var wpm = Math.round(correctLetters * 12 / duration);
-    var acc = Math.round(100 * correctLetters / (correctLetters + incorrectLetters));
-    document.getElementById("wpm").innerText = "wpm: " + wpm;
+    var wpm = Math.round(((typedEntries) / 5 - document.querySelectorAll("letter.incorrect").length) / (duration / 60));
+    var acc = Math.round(100 * (typedEntries - incorrectLetters) / typedEntries);
+    wpm > 10 ? document.getElementById("wpm").innerText = "wpm: " + wpm : document.getElementById("wpm").innerText = "invalid!";
     document.getElementById("acc").innerText = "accuracy: " + acc + "%";
     document.getElementById("type-container").style.display = "none";
     document.getElementById("type-results").style.display = "block";
@@ -225,7 +225,7 @@ function init() {
     minWord = 0;
     letterCount = 0;
     correctWords = 0;
-    correctLetters = 0;
+    typedEntries = 0;
     incorrectLetters = 0;
     resetKeyboard();
     clearPressKeyboard();

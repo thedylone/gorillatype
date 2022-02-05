@@ -26,9 +26,12 @@ made in like a few hours total
 
 made with javascript (jquery for some animations)
 
+# wpm formula
+
+using the net wpm formula as shown in [speedtypingonline.com](https://www.speedtypingonline.com/typing-equations)
+
 # changes to come
 
-- fix formula
 - enable scrolling of text
 - general cleanup of code
 - filter some words
