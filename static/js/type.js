@@ -1,4 +1,4 @@
-const wordsFile = "/gorillatype/static/js/commonwords.json";
+const wordsFile = "static/js/commonwords.json";
 
 const duration = 30;
 
@@ -53,9 +53,9 @@ function moveCaret(dist) {
 
 function resetKeyboard() {
     keyboard = {};
-    for (var i = 97; i <= 122; i++){
+    for (var i = 97; i <= 122; i++) {
         keyboard[String.fromCharCode(i)] = String.fromCharCode(i);
-      }
+    }
     displayKeyboard();
 }
 
@@ -82,7 +82,7 @@ function toggleScrambleFunction() {
 
 function scrambleKeyboard() {
     scrambled = shuffle(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']);
-    Object.keys(keyboard).forEach(letter =>{
+    Object.keys(keyboard).forEach(letter => {
         keyboard[letter] = scrambled.pop();
     })
     displayScrambled("scrambled!");
