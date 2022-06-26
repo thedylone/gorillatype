@@ -42,7 +42,8 @@
     </div>
     <!-- header-->
     <header class="main-header">
-        <div class="first-nav"><a class="skip-nav-link" href="#about">skip navigation</a>
+        <a class="skip-nav-link" href="#about">skip navigation</a>
+        <div class="first-nav">
             <div class="container">
                 <nav class="first-nav__links">
                     <ul>
@@ -69,13 +70,16 @@
         <div class="container">
             <header class="type-section__header">
                 <h2>gorillatype</h2>
-                <h4><i>Almost, but not quite, entirely unlike <a href="https://monkeytype.com/" target="_blank">monkeytype</a></i></h4>
+                <h4><i>Almost, but not quite, entirely unlike <a href="https://monkeytype.com/"
+                            target="_blank">monkeytype</a></i></h4>
             </header>
             <div id="type-game">
                 <div id="type-container">
                     <div id="type-header">
                         <div id="type-timer"></div>
-                        <div id="type-toggle">toggles: <span onclick="$('#type-keyboard').slideToggle(500)">keyboard</span><span onclick="toggleScrambleFunction()">scramble</span></div> 
+                        <div id="type-toggle">toggles: <span
+                                onclick="$('#type-keyboard').slideToggle(500)">keyboard</span><span
+                                onclick="toggleScrambleFunction()">scramble</span></div>
                         <div id="type-scrambled"></div>
                     </div>
                     <div id="type-words">
@@ -144,7 +148,7 @@
             body.style.position = 'fixed';
         }
         window.onclick = function (e) {
-            modal = document.getElementById("modal-credits")
+            modal = document.getElementById("modal-credits");
             if (e.target == modal) {
                 modal.style.display = "none";
                 const body = document.body;
