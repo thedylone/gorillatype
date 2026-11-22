@@ -1,129 +1,134 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>gorillatype</title>
-    <meta name="description" content="Almost, but not quite, entirely unlike monkeytype">
-    <meta property="og:title" content="gorillatype" />
-    <meta property="og:description" content="Almost, but not quite, entirely unlike monkeytype" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://projects.thedylone.com/gorillatype/" />
-    <meta property="twitter:card" content="summary" />
-    <meta property="twitter:creator" content="@thedylone" />
-    <link rel="icon"
-        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦍</text></svg>">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="static/css/site.css">
-    <link rel="stylesheet" href="static/css/type.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="static/js/type.js"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>gorillatype | Dylan Chua</title>
+  <meta name="description" content="A typing test that scrambles your keyboard every time you get a word right." />
+  <meta name="theme-color" content="#f9f9f6" />
+  <meta property="og:title" content="gorillatype | Dylan Chua" />
+  <meta property="og:description" content="A typing test that scrambles your keyboard every time you get a word right." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://projects.thedylone.com/gorillatype/" />
+  <meta property="og:image" content="https://projects.thedylone.com/gorillatype/gallery-cover.webp" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💫</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://projects.thedylone.com/style/v1/project-kit.css" />
+  <link rel="stylesheet" href="./static/css/type.css" />
+  <script src="https://projects.thedylone.com/style/v1/project-kit.js" defer></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="./static/js/type.js"></script>
 </head>
-
 <body>
-    <a class="skip-link" href="#main">skip to game</a>
-    <header class="site-header">
-        <div class="container">
-            <a class="site-header__home" href="https://thedylone.com/">thedylone</a>
-            <nav class="site-nav" aria-label="site">
-                <ul>
-                    <li><a href="https://github.com/thedylone/gorillatype">source</a></li>
-                </ul>
-            </nav>
+  <header class="pk-header">
+    <div class="pk-header-inner">
+      <a class="pk-brand" href="https://projects.thedylone.com/">Dylan Chua</a>
+      <ul class="pk-nav">
+        <li><a href="https://projects.thedylone.com/">Projects</a></li>
+        <li><a href="https://github.com/thedylone/gorillatype" target="_blank" rel="noreferrer">Source</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="pk-main">
+    <section class="pk-hero pk-container">
+      <p class="pk-eyebrow">Project · Games</p>
+      <h1 class="pk-title">gorillatype</h1>
+      <p class="pk-lede"><i>Almost, but not quite, entirely unlike <a href="https://monkeytype.com/" target="_blank" rel="noreferrer">monkeytype</a>.</i> A 30 second typing test where every word you get right scrambles the keyboard.</p>
+      <div class="pk-actions">
+        <a class="pk-btn" href="#play">Start typing <span aria-hidden="true">↓</span></a>
+        <a class="pk-btn pk-btn-secondary" href="https://github.com/thedylone/gorillatype" target="_blank" rel="noreferrer">View code <span aria-hidden="true">→</span></a>
+      </div>
+      <ul class="pk-tags">
+        <li class="pk-tag">JavaScript</li>
+        <li class="pk-tag">jQuery</li>
+        <li class="pk-tag">HTML</li>
+        <li class="pk-tag">CSS</li>
+      </ul>
+    </section>
+
+    <section id="play" class="pk-section">
+      <div class="pk-container">
+        <p class="pk-eyebrow">01 — Play</p>
+        <h2 class="pk-h2">Type the words before the timer runs out</h2>
+        <div class="pk-prose">
+          <p class="pk-muted">The timer starts on your first key. Press space to move to the next word; finish a word correctly and the on-screen keyboard shows where every letter has moved.</p>
         </div>
-    </header>
 
-    <main id="main">
-        <section class="section type-section" id="home">
-            <div class="container">
-                <header class="type-section__header">
-                    <p class="eyebrow">project | typing game</p>
-                    <h1 class="heading-xl">gorillatype</h1>
-                    <p class="lede"><i>Almost, but not quite, entirely unlike <a href="https://monkeytype.com/"
-                                target="_blank" rel="noreferrer">monkeytype</a>.</i> Start typing to begin a 30 second
-                        run. Every word you finish correctly scrambles the keyboard.</p>
-                </header>
-
-                <div id="type-game" class="card">
-                    <div id="type-container">
-                        <div id="type-header">
-                            <div id="type-timer"></div>
-                            <div id="type-toggle">toggles: <span
-                                    onclick="$('#type-keyboard').slideToggle(500)">keyboard</span><span
-                                    onclick="toggleScrambleFunction()">scramble</span></div>
-                            <div id="type-scrambled"></div>
-                        </div>
-                        <div id="type-words">
-                        </div>
-                    </div>
-                    <div id="type-results">
-                        <span id="wpm"></span>
-                        <span id="acc"></span>
-                    </div>
-                    <div id="type-restart" onclick="init()" title="restart">
-                        <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M3 12a9 9 0 1 0 3-6.7" />
-                            <path d="M3 3v6h6" />
-                        </svg>
-                        <span>restart</span>
-                    </div>
-                    <div id="type-keyboard">
-                        <div class="keyboard-row">
-                            <div class="keyboard-letter" data-char="q">q</div>
-                            <div class="keyboard-letter" data-char="w">w</div>
-                            <div class="keyboard-letter" data-char="e">e</div>
-                            <div class="keyboard-letter" data-char="r">r</div>
-                            <div class="keyboard-letter" data-char="t">t</div>
-                            <div class="keyboard-letter" data-char="y">y</div>
-                            <div class="keyboard-letter" data-char="u">u</div>
-                            <div class="keyboard-letter" data-char="i">i</div>
-                            <div class="keyboard-letter" data-char="o">o</div>
-                            <div class="keyboard-letter" data-char="p">p</div>
-                        </div>
-                        <div class="keyboard-row">
-                            <div class="keyboard-letter" data-char="a">a</div>
-                            <div class="keyboard-letter" data-char="s">s</div>
-                            <div class="keyboard-letter" data-char="d">d</div>
-                            <div class="keyboard-letter" data-char="f">f</div>
-                            <div class="keyboard-letter" data-char="g">g</div>
-                            <div class="keyboard-letter" data-char="h">h</div>
-                            <div class="keyboard-letter" data-char="j">j</div>
-                            <div class="keyboard-letter" data-char="k">k</div>
-                            <div class="keyboard-letter" data-char="l">l</div>
-                        </div>
-                        <div class="keyboard-row">
-                            <div class="keyboard-letter" data-char="z">z</div>
-                            <div class="keyboard-letter" data-char="x">x</div>
-                            <div class="keyboard-letter" data-char="c">c</div>
-                            <div class="keyboard-letter" data-char="v">v</div>
-                            <div class="keyboard-letter" data-char="b">b</div>
-                            <div class="keyboard-letter" data-char="n">n</div>
-                            <div class="keyboard-letter" data-char="m">m</div>
-                            <div class="keyboard-letter" data-char=",">,</div>
-                            <div class="keyboard-letter" data-char=".">.</div>
-                            <div class="keyboard-letter" data-char="/">/</div>
-                        </div>
-                    </div>
-                </div>
+        <div id="type-game" class="pk-card">
+          <div id="type-container">
+            <div id="type-header">
+              <div id="type-timer" aria-live="off"></div>
+              <div id="type-scrambled" class="pk-label"></div>
+              <div id="type-toggle" class="pk-segmented" role="group" aria-label="Toggles">
+                <button type="button" aria-pressed="true"
+                  onclick="$('#type-keyboard').slideToggle(500); this.setAttribute('aria-pressed', this.getAttribute('aria-pressed') !== 'true'); this.blur();">Keyboard</button>
+                <button type="button" aria-pressed="true"
+                  onclick="toggleScrambleFunction(); this.setAttribute('aria-pressed', toggleScramble); this.blur();">Scramble</button>
+              </div>
             </div>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <div class="container">
-            <p class="site-footer__credit">made by thedylone</p>
-            <ul>
-                <li><a class="link" href="https://thedylone.com/">homepage</a></li>
-                <li><a class="link" href="https://github.com/thedylone">github</a></li>
-            </ul>
+            <div id="type-words"></div>
+          </div>
+          <div id="type-results">
+            <div class="pk-stat"><span class="pk-label">Words per minute</span><span id="wpm" class="pk-stat-value"></span></div>
+            <div class="pk-stat"><span class="pk-label">Accuracy</span><span id="acc" class="pk-stat-value"></span></div>
+          </div>
+          <div class="type-restart-row">
+            <button type="button" id="type-restart" class="pk-btn pk-btn-secondary" onclick="init(); this.blur();">Restart <span aria-hidden="true">↻</span></button>
+          </div>
+          <div id="type-keyboard" aria-hidden="true">
+            <div class="keyboard-row">
+              <div class="keyboard-letter" data-char="q">q</div>
+              <div class="keyboard-letter" data-char="w">w</div>
+              <div class="keyboard-letter" data-char="e">e</div>
+              <div class="keyboard-letter" data-char="r">r</div>
+              <div class="keyboard-letter" data-char="t">t</div>
+              <div class="keyboard-letter" data-char="y">y</div>
+              <div class="keyboard-letter" data-char="u">u</div>
+              <div class="keyboard-letter" data-char="i">i</div>
+              <div class="keyboard-letter" data-char="o">o</div>
+              <div class="keyboard-letter" data-char="p">p</div>
+            </div>
+            <div class="keyboard-row">
+              <div class="keyboard-letter" data-char="a">a</div>
+              <div class="keyboard-letter" data-char="s">s</div>
+              <div class="keyboard-letter" data-char="d">d</div>
+              <div class="keyboard-letter" data-char="f">f</div>
+              <div class="keyboard-letter" data-char="g">g</div>
+              <div class="keyboard-letter" data-char="h">h</div>
+              <div class="keyboard-letter" data-char="j">j</div>
+              <div class="keyboard-letter" data-char="k">k</div>
+              <div class="keyboard-letter" data-char="l">l</div>
+            </div>
+            <div class="keyboard-row">
+              <div class="keyboard-letter" data-char="z">z</div>
+              <div class="keyboard-letter" data-char="x">x</div>
+              <div class="keyboard-letter" data-char="c">c</div>
+              <div class="keyboard-letter" data-char="v">v</div>
+              <div class="keyboard-letter" data-char="b">b</div>
+              <div class="keyboard-letter" data-char="n">n</div>
+              <div class="keyboard-letter" data-char="m">m</div>
+              <div class="keyboard-letter" data-char=",">,</div>
+              <div class="keyboard-letter" data-char=".">.</div>
+              <div class="keyboard-letter" data-char="/">/</div>
+            </div>
+          </div>
         </div>
-    </footer>
-</body>
+      </div>
+    </section>
+  </main>
 
+  <footer class="pk-footer">
+    <div class="pk-footer-inner">
+      <span>© 2026 Dylan Chua</span>
+      <div class="pk-footer-links">
+        <a href="https://projects.thedylone.com/">All projects</a>
+        <a href="https://thedylone.com">Portfolio</a>
+        <a href="https://github.com/thedylone" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
+</body>
 </html>
