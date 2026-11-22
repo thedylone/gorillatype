@@ -181,10 +181,10 @@ function startType(e) {
 function showResults() {
     var wpm = Math.round(((typedEntries) / 5 - document.querySelectorAll("letter.incorrect").length) / (duration / 60));
     var acc = Math.round(100 * (typedEntries - incorrectLetters) / typedEntries);
-    wpm > 10 ? document.getElementById("wpm").innerText = "wpm: " + wpm : document.getElementById("wpm").innerText = "invalid!";
-    document.getElementById("acc").innerText = "accuracy: " + acc + "%";
+    wpm > 10 ? document.getElementById("wpm").innerText = wpm : document.getElementById("wpm").innerText = "invalid!";
+    document.getElementById("acc").innerText = acc + "%";
     document.getElementById("type-container").style.display = "none";
-    document.getElementById("type-results").style.display = "block";
+    document.getElementById("type-results").style.display = "grid";
     clearPressKeyboard();
 }
 
