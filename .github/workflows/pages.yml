@@ -1,0 +1,22 @@
+# The build, kit header/footer injection and deploy live in thedylone/style.
+name: Deploy project page
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  pages:
+    uses: thedylone/style/.github/workflows/pages.yml@main
+    with:
+      site: .
